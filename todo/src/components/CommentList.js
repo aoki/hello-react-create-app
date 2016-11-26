@@ -3,9 +3,11 @@ import Comment from './Comment';
 
 class CommentList extends Component {
   render() {
+    console.log('CommentList Render');
+    console.dir(this.props.data);
     const commentNodes = this.props.data.map((comment, index) => {
       return (
-        <Comment author={comment.author} key={index}>{comment.text}</Comment>
+        <Comment key={index}>{comment}</Comment>
       );
     });
 
