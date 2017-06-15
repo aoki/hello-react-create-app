@@ -1,16 +1,23 @@
 import * as ActionTypes from '../constants/ActionTypes';
 
-const initialState = {comments: ['No Comments']};
+const initialState = {
+  comments: ['No Comments!'],
+  prs: ['No PRs!']
+};
 
 export default function(state = initialState, action) {
-  console.log('Reduce');
-  switch (action.type) {
-    case ActionTypes.RECIEVE_COMPONENTS:
-      console.log('RECIEVE_COMPONENTS');
-      console.dir(action);
-      return {comments: action.comments};
-    default:
-      console.log('DEFAULT');
-      return state;
-  }
+
+  const newState = ( () => {
+    switch (action.type) {
+      case ActionTypes.RECIEVE_COMPONENTS:
+        return {
+          comments: action.foo,
+          prs: action.comments
+        };
+      default:
+        return state;
+    }
+  })();
+
+  return newState;
 }

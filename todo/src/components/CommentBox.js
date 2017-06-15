@@ -8,8 +8,6 @@ class CommentBox extends Component {
   }
 
   render() {
-    console.log('CommentBox Render');
-    console.dir(this.props.data);
     return (
       <div className="commentBox">
         <h1>Comments</h1>

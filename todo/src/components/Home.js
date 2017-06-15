@@ -10,9 +10,9 @@ import * as config from '../constants/github-url';
 
 class Home extends Component {
   render() {
-    console.log('PROPS');
-    console.dir(this.props);
     const {dispatch, comments} = this.props;
+    console.dir(this.props);
+    console.dir(dispatch);
     const actions = bindActionCreators(CommentActions, dispatch);
     const orgsDom = config.ORGANIZATIONS.map((org, i) => {
       return <Organization data={org} key={i} />;
@@ -28,4 +28,4 @@ class Home extends Component {
   }
 }
 
-export default connect(state => state.Comment)(Home);
+export default connect(state => {return state.Comment;})(Home);

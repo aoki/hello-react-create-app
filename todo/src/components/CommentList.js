@@ -3,8 +3,6 @@ import Comment from './Comment';
 
 class CommentList extends Component {
   render() {
-    console.log('CommentList Render');
-    console.dir(this.props.data);
     const commentNodes = this.props.data.map((comment, index) => {
       return (
         <Comment key={index}>{comment}</Comment>
